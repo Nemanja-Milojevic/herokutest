@@ -12,7 +12,7 @@ nb-layout-column {
     width: 50%;
 }
 
-@media(max-width:768px) {
+@media(max-width:1079px) {
     .first{
         width: 85%;
     }
