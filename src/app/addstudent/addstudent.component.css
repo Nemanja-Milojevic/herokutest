@@ -1,0 +1,13 @@
+nb-layout-column {
+    background-color: white
+}
+
+.content{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.first{
+    width: 50%;
+}

@@ -1,0 +1,55 @@
+<div id="wrapper">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand"><h3>Navigation</h3></li>
+      <li>
+        <a href="#studentSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Students</a>
+        <ul class="collapse list-unstyled" id="studentSubmenu">
+          <li><a (click)="loadStudents()">All students</a></li>
+          <li><a (click)="loadAddStudent()">Add student</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#classSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Classes</a>
+        <ul class="collapse list-unstyled" id="classSubmenu">
+          <li><a (click)="loadClasses()">All classes</a></li>
+          <li><a (click)="loadAddClass()">Add class</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12 menu">
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle dropdownmenu" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></button>            
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div class="parent"><label>Students</label></div>
+              <div (click)="loadStudents()" class="child"><label>All students</label></div>
+              <div (click)="loadAddStudent()" class="child"><label>Add students</label></div>
+              <div class="parent"><label>Classes</label></div>
+              <div (click)="loadClasses()" class="child"><label>All classes</label></div>
+              <div (click)="loadAddClass()" class="child"><label>Add class</label></div>
+            </div>
+          </div>
+          <h1>School</h1>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <app-student *ngIf="isStudents"></app-student>
+          <app-class *ngIf="isClasses"></app-class>
+          <app-addstudent *ngIf = "isAddStudent"></app-addstudent>
+          <app-addclass *ngIf = "isAddClass"></app-addclass>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
